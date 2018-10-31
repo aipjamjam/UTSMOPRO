@@ -27,11 +27,11 @@ public class MainActivity extends AppCompatActivity {
         list = new ArrayList<>();
         list.addAll(DataMakanan.getListData());
 
-        showListPresident();
+        showListMakanan();
 
     }
 
-    private void showListPresident() {
+    private void showListMakanan() {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         ListMakanan listMakanan= new ListMakanan(this);
         listMakanan.setListmakanan(list);
@@ -41,13 +41,30 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.main_menu,menu);
-        return super.onCreateOptionsMenu(menu);
+        return true;
     }
 
     private void setActionBarTitle(String title){
         getSupportActionBar().setTitle(title);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+
+        if (item.getItemId() == R.id.action_profile){
+            Intent i = new Intent(MainActivity.this,MyProfile.class);
+            startActivity(i);
+            return true;
+        }
+        else if (item.getItemId() == R.id.action_change_language){
+            Intent i = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+            startActivity(i);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /*
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         String title = null;
@@ -62,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         setActionBarTitle(title);
         return super.onOptionsItemSelected(item);
     }
+    */
 
     /*
     public void profileku(MenuItem view) {

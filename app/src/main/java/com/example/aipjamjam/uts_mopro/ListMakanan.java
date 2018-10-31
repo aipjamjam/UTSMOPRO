@@ -79,6 +79,8 @@ public class ListMakanan extends RecyclerView.Adapter<ListMakanan.OriginalViewHo
             tvName = (TextView) itemView.findViewById(R.id.tv_item_name);
             tvRemarks = (TextView) itemView.findViewById(R.id.tv_item_remarks);
             imgPhoto = (ImageView) itemView.findViewById(R.id.img_item_photo);
+
+
         }
     }
 }

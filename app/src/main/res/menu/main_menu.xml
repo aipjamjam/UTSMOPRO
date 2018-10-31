@@ -7,6 +7,6 @@
         app:showAsAction="never" />
     <item
         android:id="@+id/action_change_language"
-        android:title="Change Laguage"
+        android:title="Change Language"
         app:showAsAction="never"/>
 </menu>
